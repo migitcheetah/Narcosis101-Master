@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-Narcosis101-20130603030321.mdf;Initial Catalog=aspnet-Narcosis101-20130603030321.2;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\websites\\narcosis101\\ASP\\Narcosis101\\Narcosis101-master\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="ItemContext-Web.config Connection String" description="ItemContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Items.mdf;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\websites\\narcosis101\\ASP\\Narcosis101\\Narcosis101-master\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ItemContext']/@connectionString" />
+  </parameter>
+  <parameter name="ItemContext_DatabasePublish-Web.config Connection String" description="ItemContext_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="ItemContext_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\websites\\narcosis101\\ASP\\Narcosis101\\Narcosis101-master\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ItemContext_DatabasePublish']/@connectionString" />
+  </parameter>
+</parameters>

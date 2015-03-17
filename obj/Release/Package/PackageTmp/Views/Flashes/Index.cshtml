@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Narcosis101.Models.Flash>
+
+@{
+    ViewBag.Title = "Flashes";
+}
+
+<h2>Flashes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Picture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+       <th>
+            @Html.DisplayNameFor(model => model.PowerReq)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dimensions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Finish)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brightness)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@Url.Content("~/Images/"+ item.Picture)" width="100px" alt="No Image" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Make)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+       <td>
+            @Html.DisplayFor(modelItem => item.PowerReq)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dimensions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Finish)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brightness)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,90 @@
+﻿@model Narcosis101.Models.Item
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Item</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShutterSpeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShutterSpeed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PowerReq)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PowerReq)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dimensions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dimensions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Finish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Finish)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

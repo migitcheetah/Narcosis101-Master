@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Narcosis101";
+}
+
+<div class="jumbotron" style="background: url(Images/bg.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; border: solid 1px black;
+">
+    <div class="frosted-title">
+        
+            <h1 style="color:black;">Narcosis101</h1>
+            <p class="lead" style="color:black; margin-top: -18px;">The internets premier website for underwater cameras and camera equipment.</p>
+            <p style="color:black;">We are a dedicated retailer of Nikonos cameras, and accessories.</p>
+        
+        </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Cameras</h2>
+        <p>
+            Stuff for sale.
+        </p>
+        <p>@Html.ActionLink("Cameras", "Index", "Cameras")</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Lenses</h2>
+        <p>
+            Stuff for sale.
+        </p>
+        <p>@Html.ActionLink("Lenses", "Index", "Lenses")</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Flashes</h2>
+        <p>
+            Stuff for sale.
+        </p>
+        <p>@Html.ActionLink("Flashes", "Index", "Flashes")</p>
+    </div>
+</div>
+
+
+<script>
+    var jumboHeight = $('.jumbotron').outerHeight();
+    function parallax() {
+        var scrolled = $(window).scrollTop();
+        $('.bg').css('height', (jumboHeight - scrolled) + 'px');
+    }
+
+    $(window).scroll(function (e) {
+        parallax();
+    });
+</script>

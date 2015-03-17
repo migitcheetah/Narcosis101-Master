@@ -1,0 +1,191 @@
+﻿@model Narcosis101.Models.Lense
+@{
+    ViewBag.Title = "Details";
+}
+<h2>Details</h2>
+<div>
+    <h4>Lens</h4>
+    <img src="@Url.Content("~/Images/"+ Model.Picture)" alt="Opps!" />
+    <hr />
+
+    <h4>Info</h4>
+    <!--Detail table-->
+    <dl class="dl-horizontal">
+        <table class="detail-main">
+            <tr>
+                <td class="detail">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        </td>
+        <td class="detail">
+        <dt>
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Class)
+        </dd>
+        </td>
+        <td class="detail">
+        <dt>
+            @Html.DisplayNameFor(model => model.Make)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Make)
+        </dd>
+        </td>
+        <td class="detail">
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        </td>
+        </tr>
+        <tr>
+            <td class="detail">
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+        </td>
+        <td class="detail">
+        <dt>
+            @Html.DisplayNameFor(model => model.Finish)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Finish)
+        </dd>
+        </td>
+        <td class="detail">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dimensions)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dimensions)
+        </dd>
+        </td>
+        <td class="detail">
+        <dt>
+            @Html.DisplayNameFor(model => model.PowerReq)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PowerReq)
+        </dd>
+        </td>
+        </tr>
+            <tr>
+                
+                <td class="detail">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ShutterSpeed)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ShutterSpeed)
+                    </dd>
+                </td>
+                <td class="detail">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ExposureMeter)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ExposureMeter)
+                    </dd>
+                </td>
+                <td class="detail">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ExposureControl)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ExposureControl)
+                    </dd>
+                </td>
+            </tr>
+        <tr>
+            <td class="detail">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Millimeters)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Millimeters)
+                </dd>
+            </td>
+            <td class="detail">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fnum)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Fnum)
+                </dd>
+            </td>
+        <td class="detail">
+        <dt>
+            @Html.DisplayNameFor(model => model.FilterSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FilterSize)
+        </dd>
+        </td>
+            </tr>
+        </table>
+        <!--Detail table-->
+
+    </dl>
+</div>
+
+
+
+
+<hr />
+<h4>Review</h4>
+
+
+@if (Model.reviews.Count() == 0)
+{
+
+    <div>
+        <h4 style="color:green">There are no reviews on this cammera. Would you like to be the first to add one?</h4>
+    </div>
+    <div class="col-md-2">
+        <p class="btn btn-default"> @Html.ActionLink("Add a review", "AddReview", new { id = Model.ID })</p>
+    </div>
+    <div class="col-md-1">
+        <p class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</p>
+    </div>
+    <div class="col-md-2">
+        <p class="btn btn-default">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+        </p>
+    </div>
+    <br />
+
+}
+@if (Model.reviews.Count() > 0)
+{
+
+    foreach (var review in Model.reviews)
+    {
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayFor(model => review.Name) : </dt>
+            <dd>@Html.DisplayFor(model => review.ReviewText)</dd>
+        </dl>
+    }
+    <div class="col-md-2">
+        <p class="btn btn-default"> @Html.ActionLink("Back to List", "Index")</p>
+    </div>
+    <div class="col-md-2">
+        <p class="btn btn-default"> @Html.ActionLink("Add a review", "AddReview", new { id = Model.ID })</p>
+    </div>
+    <div class="col-md-2">
+        <p class="btn btn-default">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+        </p>
+    </div>
+    <br />
+}

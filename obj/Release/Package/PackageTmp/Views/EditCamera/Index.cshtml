@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Narcosis101.Models.CameraViewModel>
+@{
+    ViewBag.Title = "Cameras";
+}
+<h2>Cameras</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.ShutterSpeed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.PowerReq)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Dimensions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Finish)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lens)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExposureMeter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExposureControl)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.ShutterSpeed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.PowerReq)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.Dimensions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.Finish)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lens)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExposureMeter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExposureControl)
+            </td>
+        @*
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+        *@
+        </tr>
+    }
+</table>
